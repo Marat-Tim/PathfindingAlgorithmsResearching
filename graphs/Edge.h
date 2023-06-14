@@ -4,7 +4,7 @@
 struct Edge {
     int vertex1;
     int vertex2;
-    int length;
+    int weight;
 };
 
 #endif  // GRAPHS_GRAPHS_EDGE_H_

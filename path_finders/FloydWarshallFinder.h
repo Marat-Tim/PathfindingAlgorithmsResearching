@@ -27,7 +27,6 @@ public:
                 }
             }
         }
-        int a = 1;
         return graph1.lengthBetween(vertex1, vertex2).value();
     }
 };

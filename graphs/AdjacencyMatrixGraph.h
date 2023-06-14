@@ -13,8 +13,8 @@ public:
                                                          graph->getVertexCount(), std::nullopt)) {
         std::vector<Edge> edges = graph->getEdges();
         for (const auto& edge : edges) {
-            adjacency_matrix_[edge.vertex1][edge.vertex2] = edge.length;
-            adjacency_matrix_[edge.vertex2][edge.vertex1] = edge.length;
+            adjacency_matrix_[edge.vertex1][edge.vertex2] = edge.weight;
+            adjacency_matrix_[edge.vertex2][edge.vertex1] = edge.weight;
         }
     }
 
