@@ -15,7 +15,7 @@ const std::string kIndexName = "index";
 
 int main() {
     std::vector<NamedObject<std::shared_ptr<GraphGenerator>>> generators{
-        {std::make_shared<FullGraphGenerator>(), "полный граф"},
+        //{std::make_shared<FullGraphGenerator>(), "полный граф"},
         {std::make_shared<TreeGenerator>(), "дерево"},
     };
     std::vector<NamedObject<std::shared_ptr<IPathFinder>>> path_finders{
