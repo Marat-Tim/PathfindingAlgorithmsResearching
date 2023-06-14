@@ -5,6 +5,7 @@
 #include <chrono>
 #include "path_finders/IPathFinder.h"
 #include "config.h"
+#include "random.h"
 
 class PathFinderTester {
 public:
@@ -23,7 +24,7 @@ public:
 
 private:
     std::pair<int, int> twoRandomVertices(const std::shared_ptr<IGraph> graph) {
-        return {0, graph->getVertexCount() - 1};
+        return twoRandomDifferentInts(0, graph->getVertexCount());
     }
 };
 

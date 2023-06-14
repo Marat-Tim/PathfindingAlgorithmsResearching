@@ -1,10 +1,10 @@
 #ifndef GRAPHS_GENERATORS_FULLGRAPHGENERATOR_H_
 #define GRAPHS_GENERATORS_FULLGRAPHGENERATOR_H_
 
-#include "GraphGenerator.h"
+#include "IGraphGenerator.h"
 #include "GraphBuilder.h"
 
-class FullGraphGenerator : public GraphGenerator {
+class FullGraphGenerator : public virtual IGraphGenerator {
 public:
     std::shared_ptr<IGraph> generate(int vertex_count) override {
         GraphBuilder graph_builder;

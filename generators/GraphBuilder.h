@@ -9,6 +9,13 @@
 
 class GraphBuilder {
 public:
+    GraphBuilder() : vertex_count_(0) {
+    }
+
+    GraphBuilder(std::shared_ptr<IGraph> graph)
+        : vertex_count_(graph->getVertexCount()), edges_(graph->getEdges()) {
+    }
+
     void setVertexCount(int vertex_count) {
         vertex_count_ = vertex_count;
     }
@@ -25,11 +32,16 @@ public:
         return vertex_count_;
     }
 
+    int getEdgesCount() {
+        return edges_.size();
+    }
+
     std::shared_ptr<IGraph> build() {
         return std::make_shared<SimpleGraph>(vertex_count_, edges_);
     }
+
 private:
-    int vertex_count_ = 0;
+    int vertex_count_;
     std::vector<Edge> edges_;
 };
 

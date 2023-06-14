@@ -1,11 +1,11 @@
 #include "CSV.h"
 #include "config.h"
-#include "generators/GraphGenerator.h"
+#include "generators/IGraphGenerator.h"
 #include "path_finders/IPathFinder.h"
 #include "NamedObject.h"
 #include "PathFinderTester.h"
 #include "generators/FullGraphGenerator.h"
-#include "generators/TreeGenerator.h"
+#include "generators/TreeGraphGenerator.h"
 #include "path_finders/FloydWarshallFinder.h"
 
 #include <memory>
@@ -14,9 +14,9 @@
 const std::string kIndexName = "index";
 
 int main() {
-    std::vector<NamedObject<std::shared_ptr<GraphGenerator>>> generators{
+    std::vector<NamedObject<std::shared_ptr<IGraphGenerator>>> generators{
         {std::make_shared<FullGraphGenerator>(), "полный граф"},
-        {std::make_shared<TreeGenerator>(), "дерево"},
+        {std::make_shared<TreeGraphGenerator>(), "дерево"},
     };
     std::vector<NamedObject<std::shared_ptr<IPathFinder>>> path_finders{
         {std::make_shared<FloydWarshallFinder>(), "Флойд-Уоршелл"}
