@@ -15,13 +15,13 @@ const std::string kIndexName = "index";
 
 int main() {
     std::vector<NamedObject<std::shared_ptr<GraphGenerator>>> generators{
-        //{std::make_shared<FullGraphGenerator>(), "полный граф"},
+        {std::make_shared<FullGraphGenerator>(), "полный граф"},
         {std::make_shared<TreeGenerator>(), "дерево"},
     };
     std::vector<NamedObject<std::shared_ptr<IPathFinder>>> path_finders{
         {std::make_shared<FloydWarshallFinder>(), "Флойд-Уоршелл"}
     };
-    CSV csv_vertices, csv_edges;
+    CSV csv_vertices;
     csv_vertices.addColumn(kIndexName);
     for (const auto& path_finder : path_finders) {
         for (const auto& generator : generators) {
@@ -41,6 +41,6 @@ int main() {
             }
         }
     }
-    csv_vertices.writeToFile("vertices.csv");
+    csv_vertices.writeToFile("../vertices.csv");
     return 0;
 }

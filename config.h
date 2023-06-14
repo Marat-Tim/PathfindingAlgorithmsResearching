@@ -2,7 +2,7 @@
 #define GRAPHS__CONFIG_H_
 
 const int kMinVertexCount = 10;
-const int kMaxVertexCount = 110;
+const int kMaxVertexCount = 1010;
 const int kStep = 50;
 
 const int kTestCount = 1;

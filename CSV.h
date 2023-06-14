@@ -13,14 +13,7 @@ public:
         column_to_data_[name] = std::vector<std::string>();
     }
 
-    void set(const std::string& column_name, int index, std::string value) {
-        if (index > max_index_) {
-            max_index_ = index;
-        }
-        column_to_data_[column_name][index] = value;
-    }
-
-    void set(const std::string& column_name, int index, int value) {
+    void set(const std::string& column_name, int index, uint64_t value) {
         if (index > max_index_) {
             max_index_ = index;
             for (auto& pair: column_to_data_) {
