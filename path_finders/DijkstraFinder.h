@@ -7,7 +7,7 @@
 #include "IPathFinder.h"
 #include "../graphs/AdjacencyListGraph.h"
 
-class DijkstraPathFinder : public virtual IPathFinder {
+class DijkstraFinder : public virtual IPathFinder {
 public:
     int findPath(int vertex1, int vertex2, std::shared_ptr<IGraph> graph) const override {
         AdjacencyListGraph adjacency_list_graph(graph);

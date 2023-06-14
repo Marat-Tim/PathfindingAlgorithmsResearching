@@ -2,13 +2,14 @@
 #include "config.h"
 #include "generators/IGraphGenerator.h"
 #include "path_finders/IPathFinder.h"
-#include "path_finders/DijkstraPathFinder.h"
+#include "path_finders/DijkstraFinder.h"
+#include "path_finders/BellmanFordFinder.h"
+#include "path_finders/FloydWarshallFinder.h"
 #include "NamedObject.h"
 #include "PathFinderTester.h"
 #include "generators/FullGraphGenerator.h"
 #include "generators/TreeGraphGenerator.h"
 #include "generators/MediumDenseGraphGenerator.h"
-#include "path_finders/FloydWarshallFinder.h"
 
 #include <memory>
 #include <vector>
@@ -22,8 +23,9 @@ int main() {
         {std::make_shared<MediumDenseGraphGenerator>(), "средне-связный граф"},
     };
     std::vector<NamedObject<std::shared_ptr<IPathFinder>>> path_finders{
-        //{std::make_shared<FloydWarshallFinder>(), "Флойд-Уоршелл"},
-        {std::make_shared<DijkstraPathFinder>(), "Дейкстра"},
+        {std::make_shared<FloydWarshallFinder>(), "Флойд-Уоршелл"},
+        {std::make_shared<DijkstraFinder>(), "Дейкстра"},
+        {std::make_shared<BellmanFordFinder>(), "Беллман-Форд"},
     };
     CSV csv_vertices;
     csv_vertices.addColumn(kIndexName);
