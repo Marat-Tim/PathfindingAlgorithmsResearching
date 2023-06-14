@@ -15,7 +15,8 @@ for i in range(len(finders)):
         axs[i].set_xlabel("Количество вершин в графе")
         axs[i].set_ylabel("Время работы в наносекундах")
         axs[i].grid()
-fig.savefig("image/aggregated_by_finders.png")
+fig.tight_layout()
+fig.savefig("image/aggregated_by_finders.png", bbox_inches='tight')
 
 fig, axs = plt.subplots(figsize=(7, 21), nrows=len(graph_types))
 for i in range(len(graph_types)):
@@ -26,4 +27,5 @@ for i in range(len(graph_types)):
         axs[i].set_xlabel("Количество вершин в графе")
         axs[i].set_ylabel("Время работы в наносекундах")
         axs[i].grid()
-fig.savefig("image/aggregated_by_types.png")
+fig.tight_layout()
+fig.savefig("image/aggregated_by_types.png", bbox_inches='tight')
