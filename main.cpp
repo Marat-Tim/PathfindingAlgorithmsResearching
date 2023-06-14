@@ -16,6 +16,7 @@
 
 const std::string kIndexName = "index";
 
+
 int main() {
     std::vector<NamedObject<std::shared_ptr<IGraphGenerator>>> generators{
         {std::make_shared<FullGraphGenerator>(), "полный граф"},
