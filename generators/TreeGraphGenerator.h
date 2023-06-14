@@ -11,7 +11,7 @@ public:
         GraphBuilder graph_builder;
         graph_builder.addVertex();
         for (int i = 0; i < vertex_count - 1; ++i) {
-            int random_vertex = randomInt(0, graph_builder.getVertexCount());
+            int random_vertex = randomInt(0, graph_builder.getVertexCount() - 1);
             int new_vertex = graph_builder.addVertex();
             graph_builder.connect(new_vertex, random_vertex, randomLength());
         }

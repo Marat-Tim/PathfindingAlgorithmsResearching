@@ -24,7 +24,7 @@ public:
 
 private:
     std::pair<int, int> twoRandomVertices(const std::shared_ptr<IGraph> graph) {
-        return twoRandomDifferentInts(0, graph->getVertexCount());
+        return twoRandomDifferentInts(0, graph->getVertexCount() - 1);
     }
 };
 

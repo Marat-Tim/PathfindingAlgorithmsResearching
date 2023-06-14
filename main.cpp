@@ -6,6 +6,7 @@
 #include "PathFinderTester.h"
 #include "generators/FullGraphGenerator.h"
 #include "generators/TreeGraphGenerator.h"
+#include "generators/MediumDenseGraphGenerator.h"
 #include "path_finders/FloydWarshallFinder.h"
 
 #include <memory>
@@ -17,6 +18,7 @@ int main() {
     std::vector<NamedObject<std::shared_ptr<IGraphGenerator>>> generators{
         {std::make_shared<FullGraphGenerator>(), "полный граф"},
         {std::make_shared<TreeGraphGenerator>(), "дерево"},
+        {std::make_shared<MediumDenseGraphGenerator>(), "средне-связный граф"},
     };
     std::vector<NamedObject<std::shared_ptr<IPathFinder>>> path_finders{
         {std::make_shared<FloydWarshallFinder>(), "Флойд-Уоршелл"}

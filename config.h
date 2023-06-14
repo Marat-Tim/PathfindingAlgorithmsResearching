@@ -10,4 +10,7 @@ const int kTestCount = 1;
 const int kMinLength = 1;
 const int kMaxLength = 10;
 
+const double kMinDensityCoefficientForMediumDenseGraph = 0.4;
+const double kMaxDensityCoefficientForMediumDenseGraph = 0.5;
+
 #endif//GRAPHS__CONFIG_H_
